@@ -1,0 +1,14 @@
+{
+  "shirtSizes": [
+    {"size": "SM"}, {"size": "MED"},{"size": "LG"},{"size": "XL"},{"size": "XXL"}
+  ],
+  "instructions":
+    "Change VALUES to include YOUR actual data and defaults for size and colour",
+  "controlDefaults" : {
+    "controlID": "991702428",
+    "controlFirst": "Aditya",
+    "controlLast": "Lamba",
+    "controlSize": "LG",
+    "controlColour": "Black"
+  }
+}

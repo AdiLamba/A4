@@ -1,0 +1,69 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="formGroup">
+            <mat-grid-list cols="3" rowHeight="100px" [ngStyle]="{border: 'solid blue thick'}">
+                <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter a Student ID</mat-label>
+                    <input matInput formControlName="controlID"/>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter a first name</mat-label>
+                    <input matInput formControlName="controlFirst"/>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter a last name</mat-label>
+                    <input matInput formControlName="controlLast"/>
+                </mat-form-field>
+            </mat-grid-tile>
+                    <mat-grid-tile colspan="3">
+                        <mat-divider [ngClass]="{'custom-divider': true}"></mat-divider>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Shirt Size</mat-label>
+                            <mat-select formControlName="controlSize">
+                                <mat-option *ngFor="let x of sizes" [value]="x.size">
+                                    {{x.size}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <label>Shirt Colour</label>
+                        <mat-radio-group formControlName="controlColour">
+                            <mat-radio-button *ngFor="let x of colors" [value]="x">
+                                {{x}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <label>Shirt Inclusions</label>
+                        <mat-checkbox formControlName="campusName">Campus Name</mat-checkbox>
+                        <mat-checkbox formControlName="sheridanLogo">Sheridan Logo</mat-checkbox>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="3">
+                        <mat-divider [ngClass]="{'custom-divider': true}"></mat-divider>
+                    </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="fill">
+                    <mat-label>Choose Order Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="startDate"/>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Click to Submit Data</button>
+                </mat-grid-tile>
+                <mat-grid-tile [ngStyle]="{textAlign: 'center'}">
+                    <p id="output" [ngClass]="{'output': true}"></p>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,8 @@
+.custom-divider {
+    border-top: 1px solid blue;
+}
+/* main-form.component.css */
+#output {
+    white-space: pre-wrap;
+    flex: 1;
+}
